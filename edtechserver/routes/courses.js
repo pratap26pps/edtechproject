@@ -10,7 +10,7 @@ const {createsection,updatesection,deletesection} = require("../controllers/sect
 const {subsectioncreation,subsectiondelete,subsectionupdate}=require("../controllers/subsection");
 const {creatingrating,getaveragerating,getallrating}=require("../controllers/ratingreview");
 
-const {auth,isadmin,isinstructor,isstudent}=require("../middleware/autharization");
+const {auth,isadmin,isinstructor,isstudent}=require("../middleware/Authorization");
  
 
 // mapping with routh
