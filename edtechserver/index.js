@@ -21,7 +21,7 @@ app.use(
     cors({
       origin: 'https://edtechperception.vercel.app', 
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-      allowedHeaders: ['Content-Type', 'Authorization'], 
+      allowedHeaders: ['Content-Type', 'Autharisation'], 
       credentials: true, 
     }) );
   
