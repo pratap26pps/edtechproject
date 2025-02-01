@@ -19,7 +19,7 @@ require('./config/database').dbconnect();
 app.use(cookieparser());
 app.use(
     cors({
-      origin: 'http://localhost:5173', 
+      origin: 'https://edtechperception.vercel.app/', 
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       allowedHeaders: ['Content-Type', 'Autharisation'], 
       credentials: true, 
