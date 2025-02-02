@@ -20,14 +20,12 @@ app.use(cookieparser());
 app.use(
     cors({
       origin: 'https://edtechperception.vercel.app', 
-      methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE',
-        //  'OPTIONS'
-        ], 
+      methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'], 
       allowedHeaders: ['Content-Type', 'Authorization'],
       credentials: true, 
     }) );
 
-    // app.options('*', cors());
+    app.options('*', cors());
   
     app.use((req, res, next) => {
         console.log("kua huwa tera wada");
