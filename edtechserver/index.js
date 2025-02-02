@@ -27,6 +27,11 @@ app.use(
 
     app.options('*', cors());
   
+    app.use((req, res, next) => {
+        console.log("kua huwa tera wada");
+        console.log(`${req.method} request for ${req.url}`);
+        next();
+      });
 app.use(
     fileupload({
         useTempFiles:true,
