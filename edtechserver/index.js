@@ -1,6 +1,6 @@
 const express=require("express");
 const app=express();
-
+const path = require('path');
 // dot env import 
 require("dotenv").config();
 const port=process.env.PORT_NO || 3000
@@ -44,7 +44,7 @@ app.use(
     })
 );
 const fs = require('fs');
-const path = require('path');
+
 
 const tempDir = path.join(__dirname, 'uploads', 'temp');
 if (!fs.existsSync(tempDir)) {
