@@ -163,7 +163,7 @@ const Home=()=> {
          src="https://cdn.pixabay.com/photo/2016/11/08/05/10/students-1807505_640.jpg" alt="" /> 
                       
                   </div>
-                  <div className='bg-green-800 w-72 flex justify-between   mt-[-3vh] 
+                  <div className='bg-green-800 w-72 flex justify-between   mt-[-3vh] lg:mt-48
                   transition-all duration-100 hover:scale-95 cursor-pointer h-16 ml-8 p-1 absolute my-[60vh] '>
                     <div>10
                     <p>years experiences</p>
