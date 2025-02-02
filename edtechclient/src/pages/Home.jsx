@@ -58,7 +58,7 @@ const Home=()=> {
             </div>
             
            }
-           subheading={<div className='w-[95%]'>our courses are designed and taught by industry exports
+           subheading={<div className='w-[95%] text-yellow-100'>our courses are designed and taught by industry exports
              who have years of exprience in coding and
               passoinate about share their knowledge with you </div>
               }
@@ -86,7 +86,7 @@ const Home=()=> {
             </div>
             
            }
-           subheading={<div className='w-[89%]'>go ahead and give it try,our hands on learning envirnmental
+           subheading={<div className='w-[89%] text-yellow-100'>go ahead and give it try,our hands on learning envirnmental
             means you wil be writting a real code from your first lession </div>}
               button={
                 <div className='flex my-3'>
@@ -163,7 +163,7 @@ const Home=()=> {
          src="https://cdn.pixabay.com/photo/2016/11/08/05/10/students-1807505_640.jpg" alt="" /> 
                       
                   </div>
-                  <div className='bg-green-800 w-72 flex justify-between
+                  <div className='bg-green-800 w-72 flex justify-between   mt-[-10vh] lg:mt-0
                   transition-all duration-100 hover:scale-95 cursor-pointer h-16 ml-8 p-1 absolute my-[60vh] '>
                     <div>10
                     <p>years experiences</p>
