@@ -20,8 +20,8 @@ app.use(cookieparser());
 app.use(
     cors({
       origin: 'https://edtechperception.vercel.app', 
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-      allowedHeaders: ['Content-Type', 'Authorization'], 
+      methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'], 
+      allowedHeaders: ['Content-Type', 'Authorization'],
       credentials: true, 
     }) );
 
