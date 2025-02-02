@@ -6,9 +6,9 @@ const jwt=require("jsonwebtoken");
 exports.auth = async (req,res,next)=>{
     try{
         // extract token
-     const token = req.cookies.token|| req.body.token || req.header("Autharisation")?.replace("Bearer ", "");
+     const token = req.cookies.token|| req.body.token || req.header("Authorization")?.replace("Bearer ", "");
     //   if token is missing
-    console.log("Token from headers:", req.header("Autharisation"));
+    console.log("Token from headers:", req.header("Authorization"));
     console.log("Token from cookies:", req.cookies.token);
      console.log("Token from body:", req.body.token);
     if(!token){

@@ -2,7 +2,7 @@ const express = require("express");
 const routes = express.Router();
 
 const {capturepayments,verifysignature,} = require("../controllers/payments");
-const {auth,isinstructor,isstudent,isadmin} = require("../middleware/Autharisation")
+const {auth,isinstructor,isstudent,isadmin} = require("../middleware/Authorization")
 
 
 routes.post("/capturepaments",capturepayments,auth,isstudent);  

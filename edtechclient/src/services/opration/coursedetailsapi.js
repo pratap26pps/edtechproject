@@ -20,11 +20,11 @@ export const  addcoursedetails= async (data,token)=>{
       data,
       {  
        "Content-Type":"multipart/form-data",
-          Autharisation: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
 
       });
       
-          console.log("Token in Autharisation header:", `Bearer ${token}`);
+          console.log("Token in Authorization header:", `Bearer ${token}`);
           console.log("Create course response:", response);
           toast.success("Step 1 completed");
           return response;
@@ -48,10 +48,10 @@ try {
     {name,description},
     {
       "Content-Type": "multipart/form-data",
-      Autharisation: `Bearer ${token}`,  
+      Authorization: `Bearer ${token}`,  
     });
     
-        console.log("Token in Autharisation header:", `Bearer ${token}`);
+        console.log("Token in Authorization header:", `Bearer ${token}`);
         console.log("Create category response:", response);
         toast.success("add category completed");
         return response;
@@ -73,7 +73,7 @@ const response = await apiConnector("GET",  fetchallcat.FETCHALLCAT_API,
  token,
   {
     "Content-Type": "multipart/form-data",
-    Autharisation: `Bearer ${token}`,  
+    Authorization: `Bearer ${token}`,  
   });
   
       
@@ -95,7 +95,7 @@ const response = await apiConnector("GET",  fetchallcat.FETCHALLCAT_API,
       // Edit course details
       const result = await apiConnector("POST", geteditcreatecourse.EDITCOURSE_API, data, {
     
-          Autharisation: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json", 
       
       });
@@ -120,7 +120,7 @@ const response = await apiConnector("GET",  fetchallcat.FETCHALLCAT_API,
 try {
    const response = await apiConnector("POST", getcreatesectioncourse.GETCREATESECTIONCOURSE_API,
   data,{  
-       Autharisation: `Bearer ${token}`,
+       Authorization: `Bearer ${token}`,
    });
   
       console.log("Create course response:", response);
@@ -140,7 +140,7 @@ export const  updatecreatesection= async (data,token)=>{
 try {
  const response = await apiConnector("POST", updatecreatesectioncourse.UPDATECREATESECTIONCOURSE_API,
 data, {  
-     Autharisation: `Bearer ${token}`,
+     Authorization: `Bearer ${token}`,
  });
 
     console.log("Create update section course response:", response);
@@ -167,7 +167,7 @@ try {
  const response = await apiConnector("POST", createsubsectioncourse.CREATESUBSECTIONCOURSE_API,
 data,{  
      "Content-Type": "multipart/form-data", 
-     Autharisation: `Bearer ${token}`,
+     Authorization: `Bearer ${token}`,
  });
 
     console.log("Create sub section response:", response);
@@ -187,7 +187,7 @@ try {
   const response = await apiConnector("POST", showallcoursedetails.SHOWALLCOURSE_API,
  {  
       "Content-Type": "multipart/form-data", 
-      Autharisation: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
   });
  
      console.log("fetch all course response:", response);

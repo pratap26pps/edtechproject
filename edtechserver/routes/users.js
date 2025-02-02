@@ -5,7 +5,7 @@ const routes = express.Router();
 
 const { login,signupuser,sendotp,changepassword} = require("../controllers/auth");
  
-const {auth} = require("../middleware/Autharisation");
+const {auth} = require("../middleware/Authorization");
 
 routes.post("/login",login);
 

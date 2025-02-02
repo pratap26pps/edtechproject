@@ -8,7 +8,7 @@ export const getuserenrolledcourses= async (token)=>{
       try{
         console.log("token",token);
           const response =await  apiConnector("GET",getcoursesection.GETMYCOURSES_API,
-            null,{Autharisation:`Bearer ${token}`} );
+            null,{Authorization:`Bearer ${token}`} );
           console.log("enrolled course response",response);
             //  data verification
           if(!response.data.success){
@@ -28,7 +28,7 @@ export const getuserenrolledcourses= async (token)=>{
       try{
         const url = `${deletemyaccount.DELETEACCOUNT_API}/${userid}`;
           const response =await  apiConnector("DELETE", url, null,
-             { Autharisation: `Bearer ${token}` }  );
+             { Authorization: `Bearer ${token}` }  );
           console.log("delete account response",response);
             //  data verification
           if(!response.data.success){
