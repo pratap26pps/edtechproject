@@ -43,6 +43,13 @@ app.use(
         tempFileDir:path.join(__dirname, 'uploads/temp'),
     })
 );
+const fs = require('fs');
+const path = require('path');
+
+const tempDir = path.join(__dirname, 'uploads', 'temp');
+if (!fs.existsSync(tempDir)) {
+  fs.mkdirSync(tempDir, { recursive: true });
+}
 
 // connection to cloudinary
 cloudinaryconnect(); 
