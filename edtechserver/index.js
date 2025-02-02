@@ -24,6 +24,8 @@ app.use(
       allowedHeaders: ['Content-Type', 'Authorization'], 
       credentials: true, 
     }) );
+
+    app.options('*', cors());
   
 app.use(
     fileupload({
