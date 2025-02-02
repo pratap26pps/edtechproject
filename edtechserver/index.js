@@ -1,13 +1,13 @@
 const express=require("express");
 const app=express();
-const path = require('path');
+
 // dot env import 
 require("dotenv").config();
 const port=process.env.PORT_NO || 3000
 
 // parsing with json
 app.use(express.json());
-
+const path = require('path');
 // connect with db
 require('./config/database').dbconnect();
  const cookieparser = require("cookie-parser");
