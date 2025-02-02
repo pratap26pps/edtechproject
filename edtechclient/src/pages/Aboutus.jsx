@@ -12,7 +12,7 @@ const Aboutus = () => {
                We're passionate about creating a brighter future by offering cutting-edge courses,
                leveraging emerging technologies, and nurturing a vibrant learning community.</p>
           </div>
-          <div className='absolute   lg:mt-[-162vh] mt-[-327vh] mr-10  h-16 lg:h-44
+          <div className='absolute   lg:mt-[-162vh] mt-[-257vh] mr-10  h-16 lg:h-44
            lg:scale-110 scale-95  flex gap-6'>
            <img src="https://53.fs1.hubspotusercontent-na1.net/hubfs/53/Site%20owner%20changing%20text%20and%20background%20color%20in%20CSS.jpg" alt="" height={322} width={322} />
            <img src="https://cdn.pixabay.com/photo/2017/08/01/00/38/man-2562325_640.jpg" alt=""  height={322} width={322} />
