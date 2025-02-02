@@ -1,7 +1,7 @@
 const express = require("express");
 const routes=express.Router();
 
-const {auth}= require("../middleware/Authorization");
+const {auth}= require("../middleware/authorization");
 const {updateprofile,deleteaccount,getalluserdetails,getenrolledcourses}=require("../controllers/profile");
 const {resetpasstoken,resetpassword} = require("../controllers/respass")
 
