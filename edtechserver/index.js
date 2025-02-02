@@ -40,7 +40,7 @@ app.use(
 app.use(
     fileupload({
         useTempFiles:true,
-        tempFileDir:"/temp"
+        tempFileDir:path.join(__dirname, 'uploads/temp'),
     })
 );
 
