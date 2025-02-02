@@ -51,8 +51,8 @@ const OtpPage = () => {
                    renderInput={(props)=><input {...props}/>}
                   
                    />
-                   <button type='submit' className='bg-green-500 
-                   hover:scale-95 hover:bg-red-500 transition-all duration-200 my-3 p-2 rounded-md '>
+                   <button type='submit' className='bg-yellow-500 
+                   hover:scale-95 hover:bg-green-500 transition-all duration-200 my-3 p-2 rounded-md '>
                       Verify Email
                    </button>
             </form>
