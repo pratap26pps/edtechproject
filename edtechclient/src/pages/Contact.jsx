@@ -11,6 +11,11 @@ import { useForm } from 'react-hook-form';
     toast.success("message sent")
     return
   }
+  const onSubmit = (data) => {
+    messagesent();
+    console.log(data);  // For debugging, remove in production
+  };
+  
   return (
     <div className='text-white flex flex-col justify-center items-center mt-20'>
               <div className='lg:flex lg:flex-row flex-col gap-16 p-3'>
@@ -56,7 +61,7 @@ import { useForm } from 'react-hook-form';
        from-purple-600 via-pink-600  lg:text-3xl 
         to-blue-600 bg-gradient-to-r bg-clip-text text-transparent'>Got a Idea? We've got the skills. Let's team up</p>
                    <p>Tell us more about yourself and what you're got in mind.</p>
-                   <form onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST">
+                   <form  onSubmit={handleSubmit(onSubmit)} action="https://api.web3forms.com/submit" method="POST">
                    
                     <div className='flex gap-9 my-8'>
                       <input type="hidden" name="access_key" value="ade29983-eceb-4438-8b57-45543132b11d" />
@@ -72,7 +77,9 @@ import { useForm } from 'react-hook-form';
                           <input type="text" placeholder='Enter last name' id='lastname'
                             {...register("lastname",{required:true})}
                            className='bg-slate-500 lg:p-3 rounded-md text-black font-bold' />
-                             {errors.lastname  && (<span  className='text-red-600'>first name is required</span>)}
+                            
+                             {errors.lastname && (<span className='text-red-600'>last name is required</span>)}
+
                         </div>
                     </div>
                     <div className='flex-col flex'>
@@ -91,7 +98,7 @@ import { useForm } from 'react-hook-form';
 
                      <div className='flex flex-col'>
                           <label>Message</label>
-                           <textarea placeholder='enter your message here ' id='textarea'
+                           <textarea placeholder='enter your message here '  name="message" 
                              {...register("textarea",{required:true})}
                             className='bg-slate-500 lg:p-3 h-80 rounded-md text-black font-bold'/>
                               {errors.textarea  && (<span className='text-red-600'>text area is required</span>)}
