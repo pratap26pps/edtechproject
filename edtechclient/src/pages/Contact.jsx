@@ -56,8 +56,10 @@ import { useForm } from 'react-hook-form';
        from-purple-600 via-pink-600  lg:text-3xl 
         to-blue-600 bg-gradient-to-r bg-clip-text text-transparent'>Got a Idea? We've got the skills. Let's team up</p>
                    <p>Tell us more about yourself and what you're got in mind.</p>
-                   <form onSubmit={handleSubmit(messagesent)}>
+                   <form onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST">
+                   
                     <div className='flex gap-9 my-8'>
+                      <input type="hidden" name="access_key" value="ade29983-eceb-4438-8b57-45543132b11d" />
                         <div className='flex flex-col'>
                           <label>first name</label>
                           <input type="text" placeholder='Enter first name' id='firstname'
