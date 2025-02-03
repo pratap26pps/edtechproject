@@ -93,8 +93,9 @@ import { IoMdCall } from "react-icons/io";
                             className='bg-slate-500 lg:p-3 h-80 rounded-md text-black font-bold'/>
                            
                      </div>
+                     <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
-                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;"/>
+                 
                      <button type="submit" className='bg-yellow-400 hover:bg-green-500
                      transition-all duration-300 my-6 p-5 rounded-lg hover:scale-95'>
                       send message
