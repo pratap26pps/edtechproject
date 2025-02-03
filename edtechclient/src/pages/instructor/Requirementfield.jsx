@@ -32,15 +32,15 @@ const removerequirefied = (index)=>{
 }
 
   return (
-    <div>
+    <div >
       <label >{label} <sup>*</sup></label>
       <input type="text"  id={name}  value={reqiureword}
       onChange={(e)=>setrequiredword(e.target.value)}
-       className='w-full'
+       className='w-full p-1 rounded-md font-semibold'
       />
       <button
       type='button'
-      className='rounded-lg p-3 bg-green-500'
+      className='rounded-lg p-3 mt-2 hover:scale-90 transition-all duration-150 bg-green-500'
       onClick={addrequirefied}
       >
         Add
@@ -51,11 +51,11 @@ const removerequirefied = (index)=>{
             <ul>
                 {
                     reqiurelist.map((reqiureword,index)=>(
-                        <li key={index}>
-                           <span> {reqiureword}</span>
+                        <li key={index} className='flex gap-2 my-4'>
+                           <span > {reqiureword}</span>
                        <button
                         type='button'
-                        className='rounded-lg p-3 bg-red-600'
+                        className='rounded-lg  mt-[-5px] p-2 bg-red-600 hover:scale-90 transition-all duration-150'
                         onClick={()=>removerequirefied(index)}
                         >
                             Remove

@@ -51,12 +51,12 @@ const Creaatesection = ({handleeditsectionname}) => {
     }
   return (
     <div>
-      <div className='bg-slate-600 p-3 rounded-md'>
+      <div className='bg-slate-600 p-3 rounded-md mb-5 '>
         {course?.coursecontent?.map((section)=>(
           <details 
           key={section._id} open
           >
-             <summary className='flex  border-b-2 mt-4'>
+             <summary className='flex mb-5  border-b-2 mt-4 mr-5'>
                <div className='flex justify-between my-2 gap-x-4'>
                 <div className='flex gap-2 lg:text-3xl '>
                    <RxDropdownMenu  className='mt-1 '/>
@@ -91,7 +91,7 @@ const Creaatesection = ({handleeditsectionname}) => {
 
              {/* create subsection */}
 
-             <div>
+             <div className=''>
                 {
                     section.subsection?.map((data)=>(
                         <div key={data._id}
@@ -130,10 +130,10 @@ const Creaatesection = ({handleeditsectionname}) => {
                     ))
                 }
                
-                <button className='flex gap-2 text-yellow-400 my-3' 
+                <button className='flex gap-1 text-yellow-400 my-3' 
                 onClick={()=>setaddsubsection({ sectionid: section._id,timeduration:'',
                   title: '', description: '', video: null})}>
-                  <AiOutlinePlus/><p>Add Lecture</p>
+                  <AiOutlinePlus className='mt-1'/><p>Add Lecture</p>
                 </button>    
              </div> 
           </details>

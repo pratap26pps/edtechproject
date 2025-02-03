@@ -96,7 +96,7 @@ const Coursesbuilderform = () => {
 
   return (
     
-    <div className='p-3 bg-slate-800 scale-95 mr-4'>
+    <div className='p-3 bg-slate-800 scale-95 lg:scale-125 lg:mt-36 lg:my-16  mr-9 ml-11'>
         <div>Course Builder</div>
 
         <form onSubmit={handleSubmit(onSubmit)}>

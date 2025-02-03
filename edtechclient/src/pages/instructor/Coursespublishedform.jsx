@@ -48,7 +48,7 @@ const Coursespublishedform = () => {
        handlecoursepublic();
     }
   return (
-    <div className='mt-12 text-3xl bg-slate-600 p-4 rounded-md lg:w-full mr-4 '>
+    <div className='mt-12 text-3xl bg-slate-600 p-4 ml-14 lg:ml-0 rounded-md lg:w-full mr-4 '>
       <div className='text-white'>Publish Settings</div>
       <form onSubmit={handleSubmit(onSubmit)}>
       <div className='flex gap-2 my-3 text-2xl'>

@@ -9,7 +9,7 @@ const Myprofile = () => {
   const user = useSelector((state)=>state.profile.user);
   const navigate = useNavigate();
   return (
-    <div className='ml-7 text-white'>
+    <div className='lg:ml-7 ml-2 text-white'>
 
          <h1 className='lg:mx-36 my-4 mx-14  font-bold text-2xl'>MyProfile</h1>
          {/* section 1*/}
@@ -76,7 +76,7 @@ const Myprofile = () => {
                 <li>Email</li>
                  <p className='text-slate-300'>{user?.email}</p>
                 <li>Gender</li>
-                 <p className='text-slate-300'>male</p>
+                 <p className='text-slate-300'>male/female</p>
               </ul>
              </div>
              <div>
@@ -88,7 +88,7 @@ const Myprofile = () => {
                <p>{user?.contactno || 7854123932}</p>
              
                 <li>Date of Birth</li>
-             <p>12-3-2001</p>
+             <p>day-month-year</p>
               </ul>
              </div>
            </div>

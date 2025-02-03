@@ -3,7 +3,7 @@ import React from 'react'
 const Iconbutton = ({ text,onClick,dissabled,children,outline=false,type}) => {
 
   return (
-    <div>
+    <div >
         <button disabled={dissabled} onClick={onClick} type={type}>
        {
         children ?(

@@ -87,25 +87,32 @@ const Navbar =() =>{
           navbarlink.map((link, index) => (
             <li key={index}>
               {link.title === 'Catlog' ? (
-                <div className="relative group cursor-pointer">
-                  <div className="  flex gap-2 text-white">
-                    {link.title}
-                     <FaArrowAltCircleDown className='mt-1'/>
-                  </div>
-                  <div className="absolute bg-slate-300 rounded-lg p-4
-                   text-rose-700 opacity-0 transition-all duration-200 group-hover:opacity-100">
-                    {sublinkss.length > 0 ? (
-                      sublinkss.map((sublink, subIndex) => (
-                        <div key={subIndex} className="hover:bg-amber-500  p-2 rounded-md">
-                          <Link to={`/catalog/${sublink.name}`}>{sublink.name}</Link>
-                        </div>
-                      ))
-                    ) : (
-                      <p>No links available</p>
-                    )}
-                  </div>
-                  
+          
+              <span className="group cursor-pointer relative">
+                <div className='flex gap-2 text-white'>
+                   {link.title}
+                <FaArrowAltCircleDown className='mt-1' />
                 </div>
+               
+          
+                {/* Dropdown Menu */}
+                <div className="absolute left-0  bg-slate-300 rounded-lg p-4
+                 text-rose-700 opacity-0 group-hover:opacity-100
+                  invisible group-hover:visible transition-opacity
+                   duration-200 shadow-lg z-10">
+                  {sublinkss.length > 0 ? (
+                    sublinkss.map((sublink, subIndex) => (
+                      <div key={subIndex} className="hover:bg-amber-500 p-2 rounded-md">
+                        <Link to={`/catalog/${sublink.name}`}>{sublink.name}</Link>
+                      </div>
+                    ))
+                  ) : (
+                    <p>No links available</p>
+                  )}
+                </div>
+              </span>
+            
+        
               ) : (
                 <Link to={link.path}>
                   <p className={location.pathname === link.path ? 'text-orange-600' : 'text-white'}>{link.title}</p>

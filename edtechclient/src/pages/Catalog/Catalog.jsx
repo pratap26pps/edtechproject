@@ -63,6 +63,7 @@ useEffect(() => {
             <p className='text-3xl'>{catalogdatapae?.selectedcategory?.name}</p>
             <p className='text-2xl'>{catalogdatapae?.selectedcategory?.description}</p>
          </div>
+         
          <div>
             {/* section 1 */}
             <div className='ml-5 mr-5 my-4'>
@@ -83,7 +84,9 @@ useEffect(() => {
               
                 <p className='ml-6 text-2xl  lg:text-3xl'>Top Courses in {catalogdatapae?.selectedcategory?.name}</p>
                 <div className='ml-10 my-6'>
+                
                    <CourseSlider   courses={catalogdatapae?.differentcategory?.course}/>
+                   
                 </div>
                
             </div>
@@ -98,11 +101,17 @@ useEffect(() => {
                                 <Link to={`/catalog/buy/${course._id}`}>
                                 <div>
                                   <img src={course?.thumbnail || "catalogimg"}
-                                    alt="categoryimg" height={234} width={258} />
-                                    <p>{course.name}</p>
-                                    <p>{course?.instructor?.firstname} {course?.instructor?.lastname}</p>
-                                    <p>{course.description}</p> 
-                                    <p>Rs.{ course.price}</p>      
+                                    alt="categoryimg" height={234} width={258} 
+                                      />
+                                    <p className='text-lime-300'>{course.name}</p>
+                                      <p className='text-red-500 font-bold'>Rs.{ course.price}</p>
+                                      <p className='w-96'>{course.description}</p>
+                                      <div className='flex gap-1 font-bold'>
+                                        Instructor- <p className='text-yellow-300 gap-2 flex'>
+                                          <p>{course?.instructor?.firstname}</p>
+                                        {course?.instructor?.lastname}
+                                        </p>
+                                      </div>       
                                  </div>
                                 </Link>
                      

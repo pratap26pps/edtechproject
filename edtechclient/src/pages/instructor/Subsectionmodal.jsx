@@ -167,7 +167,7 @@ const Subsectionmodal = ({ modalData ,view=false,edit=false,add=false,setmodalda
                 placeholder='enter lecture title'
                 id='lecturetitle'
                 {...register("lecturetitle",{required:true})}
-                className='w-full text-black'
+                className='w-full text-black p-1 rounded-md'
                 />
                 {
                     errors.lecturetitle  &&(<span>lecture title is required</span>)
@@ -179,7 +179,7 @@ const Subsectionmodal = ({ modalData ,view=false,edit=false,add=false,setmodalda
                 placeholder='enter lecture time duration'
                 id='lectureduration'
                 {...register("lectureduration",{required:true})}
-                className='w-full text-black'
+                className='w-full text-black p-1 rounded-md'
                 />
                 {
                     errors.lectureduration  &&(<span>lecture timeduration is required</span>)
@@ -191,7 +191,7 @@ const Subsectionmodal = ({ modalData ,view=false,edit=false,add=false,setmodalda
                 placeholder='enter lecture description'
                 id='lecturedescription'
                 {...register("lecturedescription",{required:true})}
-                className='w-full min-h-[130px] text-black'
+                className='w-full min-h-[130px] text-black p-1 rounded-md'
                 />
                 {
                     errors.lecturetitle  &&(<span>lecture description is required</span>)
@@ -200,8 +200,9 @@ const Subsectionmodal = ({ modalData ,view=false,edit=false,add=false,setmodalda
 
             {
                 !view && (
-                    <div className='bg-red-400'>
-                        <button>
+                    <div>
+                        <button  className='bg-red-400 p-2 rounded-xl hover:scale-95 hover:bg-green-400
+                        transition-all duration-150'>
                         {loading ?"loading":edit ?"shaves changes":"Save"}    
                         </button>
                     </div>

@@ -31,7 +31,7 @@ exports.sendotp= async (req,res)=>{
         lowerCaseAlphabets:false,
         specialChars:false,
     })
-    console.log("otp generated",otp);
+    // console.log("otp generated",otp);
 
     //check unique otp or not
     let response=await OTP.findOne({otp:otp  });

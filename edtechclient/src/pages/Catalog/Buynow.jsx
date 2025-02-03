@@ -70,7 +70,7 @@ const Buynow =() => {
           <div key={index} className='lg:flex lg:flex-row flex flex-col-reverse lg:justify-between '>
             <div className='lg:mt-20'>
               <h2 className='text-3xl '>{course.name}</h2>
-          <p><strong>Description:</strong> {course.description}</p>
+          <p className='w-96'><strong>Description:</strong> {course.description}</p>
           <StarRatings
         rating={2.403}
         starDimension="30px"
@@ -80,7 +80,7 @@ const Buynow =() => {
           
             <p><strong>Created By:</strong> {course.instructor.firstname} {course.instructor.lastname}</p>
               <div className='flex'><TbWorld className='mt-1'/><p>english</p></div>
-           <div className='p-4 border-2 border-stone-900 mt-20 w-full'>
+           <div className='p-4 border-2  lg:w-[54%] border-stone-900 mt-20  '>
             <strong className='my-3'>What You'll Learn:</strong>
             <p className='flex gap-3'><GiBurningDot/>  {course.whatwillLearn}</p>
            </div>
@@ -94,9 +94,9 @@ const Buynow =() => {
                  
             </div>
             </div>
-            <div className='border-2  border-black lg:w-[34vw] w-80 bg-gray-600 p-4'>
+            <div className='border-2  border-black lg:w-[94vw] lg:h-[90vh] w-80 bg-gray-600 p-4'>
           
-            <img  className='lg:ml-12'
+            <img  className='lg:ml-7'
               src={course.thumbnail || "default-thumbnail.jpg"}
               alt={course.name}
                height={332} width={332}

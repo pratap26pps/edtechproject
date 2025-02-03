@@ -4,17 +4,9 @@ import Rendersteps from './Rendersteps'
 import { MdStyle } from "react-icons/md";
 const Addcourses = () => {
   return (
-    <div className=' text-white flex  justify-evenly items-center'>
+    <div className=' text-white w-[45vw] lg:flex lg:flex-row flex-col'>
 
-     
-
-      <div>
-     <div className='lg:text-3xl flex justify-center
-      text-2xl my-8 text-yellow-400'>Add your courses here</div>
-        <Rendersteps />
-      </div>
-      {/* course tips */}
-      <div className='scale-90 bg-slate-800 p-8 rounded-md lg:mt-[-42%] '>
+      <div className='scale-75 bg-slate-800 p-8 rounded-md h-96 w-[100vw]   lg:w-[34vw] '>
         <div className='flex gap-6'>
         <MdStyle className='text-blue-700 mt-7 scale-[243%] '  /> 
             <p className='my-5 lg:text-3xl text-xl text-yellow-300'>
@@ -32,6 +24,12 @@ const Addcourses = () => {
       <li className='flex gap-2'> <GoDotFill/> Notes to all enrolled students at once.</li>
         </ul>
       </div>
+
+      <div >
+
+        <Rendersteps />
+      </div>
+   
    
     </div>
   )

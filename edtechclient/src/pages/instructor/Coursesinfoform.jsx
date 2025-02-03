@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import { useForm } from 'react-hook-form';
- 
+import { useForm } from 'react-hook-form'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { HiOutlineCurrencyRupee } from 'react-icons/hi';
 import Requirementfield from './Requirementfield';
@@ -10,8 +9,9 @@ import { toast } from 'react-toastify';
 import { apiConnector } from '../../services/apiconnector';
 import { categories } from '../../services/apis';
 import {addcoursedetails} from '../../services/opration/coursedetailsapi'
- import { handleEditCourse } from '../../services/opration/coursedetailsapi';
+import { handleEditCourse } from '../../services/opration/coursedetailsapi';
 import { addCourseToCategory } from '../../services/opration/catalogdata';
+
 const Coursesinfoform = () => {
  const {  register,setValue,handleSubmit,getValues,formState: { errors }} = useForm();
  const dispatch = useDispatch();
@@ -170,19 +170,9 @@ const isformupdated =()=>{
     console.error("Error submitting form:", error);
     toast.error("Failed to submit form");
     setloading(false);
-   }  
- 
-   
+   }     
  }  
 
- 
- 
- 
-
-
-
-
- 
    const handleThumbnailChange = (event) => {
      const file = event.target.files[0];
      if (file) {
@@ -204,13 +194,13 @@ const isformupdated =()=>{
          !loading ?
           (
             <form onSubmit={handleSubmit(onSubmit)}
-            className='bg-slate-700 p-6 text-black space-y-5'>
+            className='bg-slate-700 p-6 text-black rounded-md space-y-5'>
               <div>
                   <label>Course title<sup>*</sup></label>
                   <input id='coursetitle'
                   placeholder='enter the coures title'
                   {...register("coursetitle",{required:true})}
-                  className="w-full"
+                  className="w-full p-1 rounded-md font-semibold"
                    />
       
                    {
@@ -223,7 +213,7 @@ const isformupdated =()=>{
                   <textarea id='courseshortdesc'
                   placeholder='enter description'
                   {...register("courseshortdesc",{required:true})}
-                  className="w-full min-h-[120px]"
+                  className="w-full min-h-[120px] p-1 rounded-md font-semibold"
                    />
       
                    {
@@ -236,7 +226,7 @@ const isformupdated =()=>{
                   <input id='courseprice'
                   placeholder='enter the course price'
                   {...register("courseprice",{required:true,valueAsNumber:true})}
-                  className="w-full"
+                  className="w-full p-1 rounded-md font-semibold"
                    />
                   <HiOutlineCurrencyRupee className='abslute'/>
                    {
@@ -251,7 +241,7 @@ const isformupdated =()=>{
                 id="coursecategory"
                 defaultValue=""
                 {...register("coursecategory", { required: true })}
-                className="w-full"
+                className="w-full p-1 rounded-md font-semibold"
               >
                 <option value="" disabled>
                   {loading ? "Loading categories..." : "Choose a category"}
@@ -278,7 +268,7 @@ const isformupdated =()=>{
                 {...register("courseimage", { required:true })}
                 accept=".jpg, .jpeg, .png, .gif" // Limit accepted formats
                 onChange={handleThumbnailChange}
-                className="font-bold p-3"
+                className="font-bold p-3  rounded-md  "
               />
               {errors.courseimage && <span className="text-red-500">thumnail is required</span>}
       
@@ -288,7 +278,7 @@ const isformupdated =()=>{
                   <img
                     src={thumbnailPreview}
                     alt="Course Thumbnail Preview"
-                    className="w-32 h-32 object-cover border rounded"
+                    className="w-52 h-32 ml-5 p-1 rounded-md font-semibold"
                   />
                 </div>
               )}
@@ -302,7 +292,7 @@ const isformupdated =()=>{
                   <textarea id='coursebenefit'
                   placeholder='enter course benefit'
                   {...register("coursebenefit",{required:true})}
-                  className="w-full min-h-[120px]"
+                  className="w-full h-[190px] p-1 rounded-md font-semibold"
                    />
       
                    {
@@ -324,14 +314,15 @@ const isformupdated =()=>{
             editcourse  && (
               <button
               onClick={()=>dispatch(setStep(2))}
-              className='flex items-center gap-x-2 bg-slate-500'
+              className='bg-yellow-400 flex justify-center font-bold p-2 
+    hover:scale-90 cursor-pointer hover:bg-green-400 transition-all duration-150'
               >
                  Continue without Saving
               </button>
             )
           }
           <Iconbutton
-
+   
           text={!addcatcou?"Next":editcourse? "save changes":"course add to category"}
           disabled={loading}
           />

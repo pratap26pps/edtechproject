@@ -4,7 +4,7 @@ const Modaal = ({modaldata}) => {
   return (
     <div className=' bg-slate-400 absolute flex  inset-0 bg-opacity-50 backdrop-blur-sm
      justify-center   items-center'>
-       <div className='flex flex-col bg-slate-950 ml-36
+       <div className='flex flex-col bg-slate-800 ml-36
         text-white p-8 rounded-lg items-center'>
         <p className=''>{modaldata.text1}</p>
         <p>{modaldata.text2}</p>

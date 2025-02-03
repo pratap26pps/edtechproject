@@ -11,7 +11,7 @@ export const  Footer = () => {
                 <div className="flex h-full flex-col justify-between">
                     <div className="mb-4 inline-flex items-center">
                        < GiBookAura className='lg:scale-[632%] lg:ml-52
-                       ml-36 scale-[333%] mt-[-5vh] lg:mt-12 text-yellow-400'/>
+                       ml-[38vw] scale-[333%] mt-[-5vh] lg:mt-12 text-yellow-400'/>
                     </div>
                     <div>
                        
