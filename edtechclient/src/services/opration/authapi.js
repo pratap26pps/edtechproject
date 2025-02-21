@@ -138,6 +138,7 @@ export function login(email,password,navigate){
     const { success, message } = response.data;
     if (!success) {
       toast.warning(message || "Invalid login credentials");
+      toast.dismiss(pan);
       return;
     }
       toast.success("login successfull")

@@ -169,7 +169,12 @@ const Navbar =() =>{
                   </div>
                   <div className=" bg-slate-300 rounded-lg p-4
                    text-rose-700 opacity-0 transition-all duration-200 group-hover:opacity-100">
-                    {sublinkss.length > 0 ? (
+                      {
+                      loading ? (<div className='flex gap-2'>
+                        <div class="loader size-9"></div>
+                        <div className='mt-2'>Loading....</div>
+                      </div>) :(<div>
+                        {sublinkss.length > 0 ? (
                       sublinkss.map((sublink, subIndex) => (
                         <div key={subIndex} onClick={toggleSidebar} className="hover:bg-amber-500 p-2 rounded-md">
                           <Link to={`/catalog/${sublink.name}`}>{sublink.name}</Link>
@@ -178,6 +183,9 @@ const Navbar =() =>{
                     ) : (
                       <p>No links available</p>
                     )}
+                      </div>)
+                  }
+                   
                   </div>
                 </div>
               ) : (
