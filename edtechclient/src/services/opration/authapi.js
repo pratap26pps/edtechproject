@@ -11,6 +11,7 @@ import { setLoading, setUser,} from '../../slices/profileSlice';
 
 
 export const takeotp= async (email)=>{
+   const pan= toast.loading("loading..")
    try{
        const result = await apiConnector("POST",userotp.USEROTP_API, {email});
        console.log("result of otp email",result);
@@ -21,13 +22,13 @@ export const takeotp= async (email)=>{
           console.log("otp not sent",error);
           toast.error("otp does not sent,please try again")
      }
-
+   toast.dismiss(pan);
 }
 
 export function signup(firstname,lastname,password,confirmpassword,email,accounttype,otp,navigate){
      
   return async (dispatch)=>{
- 
+     const pan= toast.loading("loading..")
     dispatch(setLoading(true));
    
     console.log({
@@ -68,14 +69,14 @@ export function signup(firstname,lastname,password,confirmpassword,email,account
      toast.error("an error occured after fetching otp verification");
   }
   dispatch(setLoading(false));
-   
+  toast.dismiss(pan);  
 }
 }
 
 export function  getpasswordresettoken(email,setemailsend){
 
     return async(dispatch)=>{
-       
+       const pan= toast.loading("loading..") 
       dispatch(setLoading(true));
       try{
           const response =  apiConnector("POST", resetpasswordapi.RESETPASSWORD_API,{email,setemailsend});
@@ -91,11 +92,13 @@ export function  getpasswordresettoken(email,setemailsend){
           toast.error("faild to send email for resetting password")
       }
       dispatch(setLoading(false));
+      toast.dismiss(pan);
     }
 }
 
 export function resetpassword(password,confirmpassword,token){
      return async(dispatch)=>{
+       const pan= toast.loading("loading..")
       dispatch(setLoading(true));
       try{
          const response = apiConnector("POST",
@@ -111,7 +114,9 @@ export function resetpassword(password,confirmpassword,token){
               console.log("reset error",error);
              console.log("unable to reset password");
       }
+      toast.dismiss(pan);
      }
+     
 }
 
 export function login(email,password,navigate){
@@ -119,7 +124,7 @@ export function login(email,password,navigate){
 
 
 
-  
+   const pan= toast.loading("loading..")
     dispatch(setLoading(true));
     try{
           const response = await apiConnector("POST",loginapi.login_api,{
@@ -141,11 +146,11 @@ export function login(email,password,navigate){
       localStorage.setItem("token",JSON.stringify(response.data.token))
       navigate('/dashboard/myprofle')
     }catch(error){
-          toast.error("login failed,user is not registered,please signup first")
-          navigate('/signup');
+          toast.error("login failed")
           console.log("error at login api ",error)
     }
     dispatch(setLoading(false));
+    toast.dismiss(pan);
   }
 }
 

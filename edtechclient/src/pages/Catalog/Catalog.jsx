@@ -33,7 +33,7 @@ const Catalog = () => {
 // fetch all category
 
 useEffect(() => {
-    const toastid = toast.loading("loading")
+  
    const catalogapi = async()=>{
     try{
        const response = await catalogdata(categoryid);
@@ -47,7 +47,7 @@ useEffect(() => {
       console.log("failed to get catagog data api")
     }
    }
-   toast.dismiss(toastid);
+  
    catalogapi();
 }, [categoryid])
 

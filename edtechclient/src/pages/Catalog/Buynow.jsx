@@ -112,13 +112,15 @@ const Buynow =() => {
             <p className='flex justify-center my-3'>30-Day Money-Back Guarantee</p>  
             <p className='flex justify-center my-3 text-2xl text-yellow-500'>
                 <FaShareFromSquare className='mt-1'/>share </p> 
-          </div>              
+          </div>
+                        
           </div>
 
          
         ))
       ) : (
-        <p>Loading course details...</p>
+       <div className='flex justify-center my-20'><p className='loader'></p>
+        <p className='mt-3'>Loading course details...</p></div>
       )}
       <div className='ml-[-5vw]'>
         <Footer/>

@@ -4,7 +4,8 @@ import { apiConnector } from "../apiconnector";
 import { toast } from "react-toastify";
 
 export const getuserenrolledcourses= async (token)=>{
-  
+    const toastid = toast.loading("loading....")
+     
       try{
         console.log("token",token);
           const response =await  apiConnector("GET",getcoursesection.GETMYCOURSES_API,
@@ -20,11 +21,14 @@ export const getuserenrolledcourses= async (token)=>{
           console.log("enrolled course failed",error);
           toast.error("faild to get enrolled course")
       }
+      toast.dismiss(toastid);
     }
 
     export const deleteaccount= async (userid,token)=>{
    console.log("userid during delete account",userid);
         console.log("token during delete account",token);
+    const toastid = toast.loading("loading....")
+
       try{
         const url = `${deletemyaccount.DELETEACCOUNT_API}/${userid}`;
           const response =await  apiConnector("DELETE", url, null,
@@ -40,4 +44,5 @@ export const getuserenrolledcourses= async (token)=>{
           console.log("Account deleted  failed",error);
           toast.error("faild to Account deleted ")
       }
+      toast.dismiss(toastid);
     }

@@ -31,15 +31,21 @@ export const addCourseToCategory = async (data) => {
   console.log("Course ID:", data.courseid);
  
   try {
+    const toastid = toast.loading("loading....")
+
     const { categoryid, courseid } =data;
       const response = await apiConnector("POST",apiaddcoursetocat.ADCATCOURSE_API, {
           categoryid,
           courseid,
       });
+      toast.dismiss(toastid); 
       return response.data;
+ 
+
   } catch (error) {
       console.error(error);
       throw new Error(error.response?.data?.message || "Something went wrong");
   }
+  
 };
  
