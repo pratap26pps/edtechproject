@@ -9,6 +9,7 @@ import { FaBars,FaTimes, } from 'react-icons/fa'
 import { apiConnector } from '../services/apiconnector'
 import {categories} from '../services/apis'
 import { GiBookAura } from "react-icons/gi";
+import { toast } from 'react-toastify'
 
 const Navbar =() =>{
    const  {token} = useSelector((state)=>state.auth);
@@ -22,6 +23,7 @@ const Navbar =() =>{
     const [sublinkss,setsubLinks] = useState([]);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [loading, setloading] = useState(true);
 
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -40,6 +42,7 @@ const Navbar =() =>{
 
     const fetchsublinks = async()=>{
            try{
+            setloading(true);
               const result =await apiConnector("GET",categories.CATEGORIES_API);
               console.log("result ",result);
               setsubLinks(result.data.getallcategory);
@@ -47,6 +50,7 @@ const Navbar =() =>{
            }catch(error){
               console.log("could not fetch the catlog data ");
            }
+           setloading(false);
     }
 
     useEffect(() => {
@@ -96,11 +100,17 @@ const Navbar =() =>{
                
           
                 {/* Dropdown Menu */}
+                
                 <div className="absolute left-0  bg-slate-300 rounded-lg p-4
                  text-rose-700 opacity-0 group-hover:opacity-100
                   invisible group-hover:visible transition-opacity
                    duration-200 shadow-lg z-10">
-                  {sublinkss.length > 0 ? (
+                    {
+                      loading ? (<div className='flex gap-2'>
+                        <div class="loader size-12"></div>
+                        <div className='mt-2'>Loading....</div>
+                      </div>) : (<div>
+                   {sublinkss.length > 0 ? (
                     sublinkss.map((sublink, subIndex) => (
                       <div key={subIndex} className="hover:bg-amber-500 p-2 rounded-md">
                         <Link to={`/catalog/${sublink.name}`}>{sublink.name}</Link>
@@ -109,6 +119,10 @@ const Navbar =() =>{
                   ) : (
                     <p>No links available</p>
                   )}
+                      </div>)
+                    }
+
+
                 </div>
               </span>
             
