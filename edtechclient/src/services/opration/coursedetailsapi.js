@@ -7,7 +7,7 @@ import { apiConnector } from "../apiconnector";
 import { addcreatecategory } from "../apis";
 import { geteditcreatecourse } from "../apis";
 import { fetchallcat } from "../apis";
-import { showcoursedetails } from "../apis";
+import { showcoursedetails,updatesubsectioncourse } from "../apis";
 import { toast } from "react-toastify";
  
 
@@ -176,6 +176,27 @@ data,{
   } catch (error) {
     console.error("Create sub section failed:", error);
     toast.error("Failed to create sub section");
+    
+  }
+}
+
+export const updatesubsection= async (data,token)=>{
+  console.log("data of subsection and its id",[...data.entries()]);
+  console.log("Token being sent createsection:", token);
+
+try {
+ const response = await apiConnector("POST", updatesubsectioncourse.UPDATESUBSECTIONCOURSE_API,
+data,{  
+     "Content-Type": "multipart/form-data", 
+     Authorization: `Bearer ${token}`,
+ });
+
+    console.log("Create sub section response:", response);
+    toast.success("update sub section completed");
+    return response;
+  } catch (error) {
+    console.error("update sub section failed:", error);
+    toast.error("Failed to update sub section");
     
   }
 }

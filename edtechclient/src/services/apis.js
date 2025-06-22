@@ -44,6 +44,9 @@ export const getcreatesectioncourse = {
 export const createsubsectioncourse = {
     CREATESUBSECTIONCOURSE_API:  `${BASE_URL}/courses/subsectioncreation`,
 }
+export const updatesubsectioncourse = {
+    UPDATESUBSECTIONCOURSE_API:  `${BASE_URL}/courses/subsectioncreation`,
+}
 export const showallcoursedetails = {
     SHOWALLCOURSE_API:  `${BASE_URL}/courses/showallcourse`,
 }

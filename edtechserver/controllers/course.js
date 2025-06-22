@@ -130,7 +130,13 @@ exports.showallcourse = async (req, res) => {
           const getallcourse = await Course.find({},
             {name:1,description:1,instructor:1
             ,coursecontent:1, price:1,whatwillLearn:1,  thumbnail:1,status:1
-          });
+          }).populate({
+      path: "coursecontent",
+      populate: {
+        path: "subSection",
+       
+      } 
+    });
           return   res.status(200).json({
               success:true,
               message:"all category return successfully",

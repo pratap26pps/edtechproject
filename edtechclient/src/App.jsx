@@ -24,6 +24,7 @@ import Allcategory from './pages/admin/Allcategory'
 import Mycourseinst from './pages/instructor/Mycourseinst'
 import Addcourses from './pages/instructor/Addcourses'
 import Dashboardinst from './pages/instructor/Dashboard'
+import CourseDetails from './pages/instructor/CourseDetails'
 import Buynow from './pages/Catalog/Buynow' 
 import Catalog from './pages/Catalog/Catalog'
 function App() {
@@ -76,6 +77,7 @@ function App() {
           <Route path="/dashboard/add-Course" element={ <Addcourses/> }/>
           <Route path="/dashboard/instructor" element={ <Dashboardinst/> }/>
           <Route path="/dashboard/my-course" element={ <Mycourseinst/> }/>
+          <Route path="/dashboard/course-details/:courseId" element={ <CourseDetails/> }/>
           </>
         )
        }
